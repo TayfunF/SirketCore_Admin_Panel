@@ -1,0 +1,30 @@
+﻿@using SirketCore.Models
+@model List<Birim>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<small>Birim Bilgisini Güncelleme Sayfası</small>
+<table class="table table-bordered">
+    <tr>
+        <td>Birim ID</td>
+        <td>Birim Adı</td>
+        <td>Sil</td>
+        <td>Güncelle</td>
+        <td>Detay</td>
+    </tr>
+    @foreach(var k in Model)
+            {
+                <tr>
+                    <td>@k.BirimID</td>
+                    <td>@k.BirimAd</td>
+                    <td><a href="/Birim/BirimSil/@k.BirimID" class="btn btn-danger">Sil</a></td>
+                    <td><a href="/Birim/BirimGetir/@k.BirimID" class="btn btn-success">Güncelle</a></td>
+                    <td><a href="/Birim/BirimDetay/@k.BirimID" class="btn btn-warning">Detay</a></td>
+                </tr>
+            }
+</table>
+<a href="/Birim/YeniBirim" class="btn btn-primary">Yeni Birim Ekle</a>
+

@@ -1,0 +1,26 @@
+﻿@model SirketCore.Models.Personel
+
+@{
+    ViewData["Title"] = "YeniPersonel";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<small>Yeni Personel Ekleme Sayfası</small>
+
+<form class="form-group" method="post">
+    <b>Personel Adı</b>
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    <br />
+    <b>Personel Soyadı</b>
+    @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control" })
+    <br />
+    <b>Personel Sehir</b>
+    @Html.TextBoxFor(x => x.Sehir, new { @class = "form-control" })
+    <br />
+    @*//DropDownListFor Frontend Kısmı*@
+    <b>Personel Birimi</b>
+    @*@Html.DropDownListFor(x => x.Birim.BirimID, new SelectList(ViewBag.dgr, "BirimID", "BirimAd"), "Lütfen Birim Seçiniz", new { @class = "form-control" })*@
+    @Html.DropDownListFor(x => x.Birim.BirimID, new SelectList(ViewBag.yeniPersonel, "BirimID", "BirimAd"), "Lütfen Birim Seçiniz", new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Personel Ekle</button>
+</form>

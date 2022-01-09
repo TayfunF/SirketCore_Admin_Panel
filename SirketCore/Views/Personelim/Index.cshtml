@@ -1,0 +1,34 @@
+﻿@using SirketCore.Models
+@model List<Personel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<small>Personeller listesi</small>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Şehir</th>
+        <th>Birim</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach(var k in Model)
+            {
+         <tr>
+             <td>@k.PersonelID</td>
+             <td>@k.Ad</td>
+             <td>@k.Soyad</td>
+             <td>@k.Sehir</td>
+             <td>@k.Birim.BirimAd</td>
+             <td><a href="/Personelim/PersonelSil" class="btn btn-danger">Sil</a></td>
+             <td><a href="/Personelim/PersonelGetir" class="btn btn-success">Güncelle</a></td>
+         </tr>
+            }
+</table>
+<a href="/Personelim/YeniPersonel" class="btn btn-primary">Yeni Personel Ekle</a>

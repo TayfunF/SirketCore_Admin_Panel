@@ -1,0 +1,29 @@
+﻿@using SirketCore.Models
+@model List<Personel>
+
+@{
+    ViewData["Title"] = "BirimDetay";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+@*<small>Birim Detay Sayfası</small>*@
+
+<h2 class="mt-2">@ViewBag.brm Detayları</h2>
+
+<table class="table table-bordered mt-4">
+    <tr class="bg-dark text-info">
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Şehir</th>
+    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.PersonelID</td>
+            <td>@k.Ad</td>
+            <td>@k.Soyad</td>
+            <td>@k.Sehir</td>
+        </tr>
+    }
+</table>

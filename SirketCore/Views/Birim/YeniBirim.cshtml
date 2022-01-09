@@ -1,0 +1,14 @@
+﻿@model SirketCore.Models.Birim
+@{
+    ViewData["Title"] = "YeniBirim";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<small>Yeni Birim Ekleme Sayfası</small>
+
+<form class="form-group mt-5" method="post">
+    <b>Eklenecek Birim Adını Giriniz</b>
+    @Html.TextBoxFor(x => x.BirimAd, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Yeni Birim Ekle</button>
+</form>
